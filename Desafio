@@ -1,0 +1,84 @@
+class Livro {
+    private String titulo; //importante deixar o private pois não deve ter alteração
+    private String autor;
+    private int anoPublicacao;
+    private String estado;
+
+    public Livro(String titulo, String autor, int anoPublicacao, String estado) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anoPublicacao = anoPublicacao
+        this.estado = estado;
+    }
+
+    //Fazendo o Getters e Setters
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+} //Criamos a entidade "livros" como uma classe e fizemos a construção e getters e setters ✅
+
+//Criando a entidade "usuário" como uma classe, fazer o construtor e getters e setters🟨
+
+class Usuario {
+    private String nome;
+    private int identificacao;
+    private List<Livro> livrosEmprestados; //aqui se faz necessário a importação de uma lista de livros para conseguirmos realizar a leitura;
+
+    //iniciando aa construção:
+    public Usuario(String nome, int identificacao) {
+        this.nome = nome;
+        this.identificacao = identificacao;
+        this.livrosEmprestados = new Arraylist<>(); //precisarei olhar com mais calma este ponto;
+    }
+
+    //método necessário para emprestar e devolver livros, básicamente adicionamos livro em um lista ou removemos:
+
+    public void emprestarLivro (livro livro) {
+            livrosEmprestados.add(livro);
+    }
+
+    public void devolverLivro(Livro livro) {
+        livrosEmprestados.remove(livro);
+    }
+}
+
+class Funcionario {
+    public void adicionarLivro (Livro livro, List <Livro> acervo) {
+    acervo.add(livro);
+}
+    public void removerLivro (Livro livro, List <livro> acervo) {
+        acervo.remove(livro);
+    }
+    public void cadastrarUsuario (Usuario usuario, List <Usuario> usuarios) {
+        usuarios.add (usuario);
+    }
+}
+
+//Classe principal para testar funcionamento:
+
+public class Biblioteca {
+    public static void main(String[] args) {
+        Livro livro1 = new Livro("Crespusculo", "Stephen", "2008", "disponível");
+        Livro livro2 = new Livro("Quem é você Alaskaa", "John Green", "2012", "disponível");
+
+        Usuario usuario1 -new Usuario("Rafael,"001);
+
+        Funcionario funcionario = new Funcionario();
+
+        usuario1.emprestarlivro(livro1);
+        usuario1.devolverLivro(livro1);
+    }
+}
